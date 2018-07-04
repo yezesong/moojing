@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ik.moojing">
 
-
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <!--
       宽         	240 	320 	480 	720     1080 	1440
      DPI等级	        LDPI	MDPI	HDPI	XHDPI	XXHDPI	XXXHDPI
@@ -35,6 +36,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".activity.ChannelManageActivity" />
     </application>
 
 </manifest>

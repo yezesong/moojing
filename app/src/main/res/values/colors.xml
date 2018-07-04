@@ -9,4 +9,11 @@
     <color name="window_bg_color">#000</color>
 
     <color name="color_main_data_time">#BDBDBD</color>
+
+    <color name="c3">#dedede</color>
+    <color name="c6">#646464</color>
+    <color name="c7">#383838</color>
+    <color name="c8">#ff6c6c</color>
+    <color name="c9">#cc3333</color>
+    <color name="c12">#ffffff</color>
 </resources>

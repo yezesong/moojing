@@ -100,7 +100,7 @@
                 android:layout_width="394px"
                 android:layout_height="2px"/>
 
-
+            <include layout="@layout/tab_layout"/>
         </LinearLayout>
 
 
