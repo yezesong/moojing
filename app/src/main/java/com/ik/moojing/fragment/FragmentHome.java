@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ik.moojing.R;
+import com.ik.moojing.adapter.TabStripAdapter;
 import com.ik.moojing.utils.ChinaDate;
 
 /**
@@ -14,6 +15,7 @@ import com.ik.moojing.utils.ChinaDate;
 public class FragmentHome extends LazyLoadFragment implements View.OnClickListener {
     private ImageView mIvRobat;
     private TextView mTvChinaDay;
+
 
     @Override
     protected int setContentView() {
