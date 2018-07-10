@@ -37,6 +37,7 @@ public class TabStrip extends HorizontalScrollView {
     private LinearLayout.LayoutParams defaultTabLayoutParams;
     private LinearLayout.LayoutParams expandedTabLayoutParams;
 
+    private boolean mShowIndicator;
     private final PageListener pageListener = new PageListener();
     public OnPageChangeListener delegatePageListener;
 
@@ -99,6 +100,7 @@ public class TabStrip extends HorizontalScrollView {
         tabCheckTextColor = a.getColor(R.styleable.TabStrip_tabCheckTextColor, tabTextColor);
         tabTextSize = a.getDimensionPixelSize(R.styleable.TabStrip_tabTextSize, tabTextSize);
         indicatorHeight = a.getDimensionPixelSize(R.styleable.TabStrip_indicatorHeight, indicatorHeight);
+        mShowIndicator = a.getBoolean(R.styleable.TabStrip_showindicator, false);
         underlineHeight = a.getDimensionPixelSize(R.styleable.TabStrip_underlineHeight, underlineHeight);
         tabPadding = a.getDimensionPixelSize(R.styleable.TabStrip_tabPaddingLeftRight, tabPadding);
         shouldExpand = a.getBoolean(R.styleable.TabStrip_shouldExpand, shouldExpand);
@@ -155,12 +157,12 @@ public class TabStrip extends HorizontalScrollView {
                 scrollToChild(currentPosition, 0);
             }
         });
-
     }
 
     private void addTextTab(final int position, String title) {
         TextView tab = new TextView(getContext());
         tab.setText(title);
+        tab.setBackgroundResource(R.drawable.tab_item_bg);
         tab.setGravity(Gravity.CENTER);
         tab.setSingleLine();
         addTab(position, tab);
@@ -240,7 +242,8 @@ public class TabStrip extends HorizontalScrollView {
             lineLeft = (currentPositionOffset * nextTabLeft + (1f - currentPositionOffset) * lineLeft);
             lineRight = (currentPositionOffset * nextTabRight + (1f - currentPositionOffset) * lineRight);
         }
-        canvas.drawRect(lineLeft, height - indicatorHeight, lineRight, height, rectPaint);
+        if (mShowIndicator)
+            canvas.drawRect(lineLeft, height - indicatorHeight, lineRight, height, rectPaint);
 
 //		rectPaint.setColor(underlineColor);
 //		canvas.drawRect(0, height - underlineHeight, tabsContainer.getWidth(), height, rectPaint);

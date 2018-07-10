@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="394px"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="70px"
             android:orientation="vertical">
 
@@ -95,54 +97,268 @@
             </LinearLayout>
 
             <View
-                android:layout_marginTop="21px"
-                android:background="#08D7F6"
                 android:layout_width="394px"
-                android:layout_height="2px"/>
+                android:layout_height="2px"
+                android:layout_marginBottom="17px"
+                android:layout_marginTop="21px"
+                android:background="#08D7F6" />
 
-            <include layout="@layout/tab_layout"/>
+            <include layout="@layout/tab_layout" />
+
+            <View
+                android:layout_width="394px"
+                android:layout_height="2px"
+                android:layout_marginBottom="17px"
+                android:layout_marginTop="21px"
+                android:background="#08D7F6" />
         </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <View
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="200px"
             android:layout_weight="1.0"
             android:background="@android:color/transparent" />
 
         <LinearLayout
             android:layout_width="358px"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginRight="67px"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="87px"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
+                <com.ik.moojing.widget.CircleImageView
+                    android:id="@+id/circler_img"
+                    android:layout_width="50px"
+                    android:layout_height="50px"
+                    android:src="@mipmap/new01" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16px"
+                    android:layout_weight="1.0"
+                    android:text="Crystal"
+                    android:textColor="#21DBF7"
+                    android:textSize="30px" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_tip_right" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginBottom="16px"
+                android:layout_marginTop="21px"
+                android:background="#08D7F6" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="46px"
+                android:src="@mipmap/icon_robat_main" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_shadow" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginBottom="17px"
+                android:layout_marginTop="43px"
+                android:background="#08D7F6" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="1"
+                    android:text="备忘录"
+                    android:textColor="#21DBF7"
+                    android:textSize="26sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5px"
+                            android:text="19日"
+                            android:textColor="#EDEDED"
+                            android:textSize="30px" />
+
+                        <TextView
+                            android:id="@+id/tv_week"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tv_date"
+                            android:text="星期二"
+                            android:textColor="#CFCFCF"
+                            android:textSize="12px" />
+
+                        <TextView
+                            android:id="@+id/tv_date_long"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_week"
+                            android:layout_toRightOf="@id/tv_date"
+                            android:text="2018年5月19日"
+                            android:textColor="#CFCFCF"
+                            android:textSize="12px" />
+
+                        <ImageView
+                            android:id="@+id/img_add"
+                            android:layout_width="24px"
+                            android:layout_height="24px"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:src="@mipmap/ic_add" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_marginTop="15px"
+                        android:background="#666666" />
+
+                    <ListView
+                        android:id="@+id/memorandum_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="170px"
+                        android:layout_marginTop="5px" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginTop="20px"
+                android:background="#08D7F6" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15px"
+                android:text="情景模式"
+                android:textColor="#21DBF7"
+                android:textSize="26px" />
+
+            <LinearLayout
+                android:id="@+id/status_toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="100px"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_home"
+                    style="@style/radio_style"
+                    android:button="@null"
+                    android:drawableTop="@drawable/type_home"
+                    android:text="回家" />
+
+
+                <RadioButton
+                    android:id="@+id/radio_media"
+                    style="@style/radio_style"
+                    android:button="@null"
+                    android:drawableTop="@drawable/typ_media"
+                    android:text="影音" />
+
+                <RadioButton
+                    android:id="@+id/type_visitor"
+                    style="@style/radio_style"
+                    android:button="@null"
+                    android:drawableTop="@drawable/type_visitor"
+                    android:text="访客" />
+
+                <RadioButton
+                    android:id="@+id/type_more"
+                    style="@style/radio_style"
+                    android:button="@null"
+                    android:drawableTop="@drawable/type_more"
+                    android:text="更多" />
+
+            </LinearLayout>
+            <!--
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="100px"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/type_home"
+                                style="@style/radio_style"
+                                android:button="@drawable/type_home"
+                                android:background="@drawable/radio_home"
+                                android:text="回家" />
+
+                            <RadioButton
+                                android:id="@+id/type_media"
+                                style="@style/radio_style"
+                                android:background="@drawable/radio_media"
+                                android:button="@drawable/typ_media"
+                                android:text="影音" />
+
+                            <RadioButton
+                                android:id="@+id/type_visitor"
+                                style="@style/radio_style"
+                                android:button="@drawable/radio_visitor"
+                                android:text="访客" />
+
+                            <RadioButton
+                                android:id="@+id/type_more"
+                                style="@style/radio_style"
+                                android:button="@drawable/radio_more"
+                                android:text="更多" />
+                        </RadioGroup>-->
+        </LinearLayout>
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="680px"
+        android:layout_height="90px"
+        android:layout_marginBottom="50px"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <com.ik.moojing.widget.HorizontalListView
+            android:id="@+id/hori_listview"
+            android:layout_width="660px"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/more_apps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10px"
+            android:src="@mipmap/icon_more_apps" />
+    </LinearLayout>
 </LinearLayout>

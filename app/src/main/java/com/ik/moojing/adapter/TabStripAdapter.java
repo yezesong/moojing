@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.ik.MoojingApp;
 import com.ik.moojing.fragment.NewsFragment;
 
 import java.util.ArrayList;
@@ -12,36 +13,18 @@ import java.util.List;
 
 public class TabStripAdapter extends FragmentPagerAdapter {
 
-    private List<String> catalogs = new ArrayList<String>();
-
     public TabStripAdapter(FragmentManager fm) {
         super(fm);
-        init();
-    }
-
-    private void init() {
-        catalogs.add("推荐");
-        catalogs.add("热点");
-        catalogs.add("上海");
-        catalogs.add("视频");
-        catalogs.add("社会");
-        catalogs.add("军事");
-        catalogs.add("评论");
-        catalogs.add("娱乐");
-        catalogs.add("科技");
-        catalogs.add("体育");
-        catalogs.add("科技");
-        catalogs.add("更多");
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return catalogs.get(position);
+        return MoojingApp.mCatalogs.get(position);
     }
 
     @Override
     public int getCount() {
-        return catalogs.size();
+        return MoojingApp.mCatalogs.size();
     }
 
     @Override

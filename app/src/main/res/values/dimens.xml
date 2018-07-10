@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="thumnail_default_size">54px</dimen>
+    <dimen name="thumnail_default_width">@dimen/thumnail_default_size</dimen>
+    <dimen name="thumnail_default_height">@dimen/thumnail_default_size</dimen>
+</resources>

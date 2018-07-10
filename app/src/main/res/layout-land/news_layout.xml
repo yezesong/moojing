@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recy_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.ik.moojing.widget.RecyclerViewHeader
+        android:id="@+id/header"
+        android:layout_marginTop="8px"
+        android:layout_width="380px"
+        android:layout_height="220px">
+
+        <ImageView
+            android:id="@+id/img_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@mipmap/news02" />
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/alpha_1"
+            android:maxLines="2"
+            android:padding="2px"
+            android:text="加渔船被美巡逻队拦截 专家：或引爆两国领土争端"
+            android:textColor="#FFF"
+            android:textSize="18px" />
+    </com.ik.moojing.widget.RecyclerViewHeader>
+</FrameLayout>

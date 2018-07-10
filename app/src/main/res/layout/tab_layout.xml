@@ -2,50 +2,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
-   <RelativeLayout
-       android:id="@+id/category_layout"
-       android:layout_width="match_parent"
-       android:layout_height="45dp">
+    <RelativeLayout
+        android:id="@+id/category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-      <ImageView
-          android:id="@+id/add_channel"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentRight="true"
-          android:layout_centerVertical="true"
-          android:contentDescription="@string/app_name"
-          android:scaleType="centerCrop"
-          android:layout_marginLeft="5dp"
-          android:layout_marginRight="5dp"
-          android:background="@drawable/add_channel_selector" />
+        <ImageView
+            android:id="@+id/add_channel"
+            android:layout_width="30px"
+            android:layout_height="30px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:background="@drawable/add_channel_selector"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop" />
 
-      <LinearLayout
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:layout_alignParentLeft="true"
-          android:layout_centerVertical="true"
-          android:layout_toLeftOf="@id/add_channel">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/add_channel">
 
-         <com.ik.moojing.widget.TabStrip
-             android:id="@+id/tabstrip"
-             android:layout_width="wrap_content"
-             android:layout_height="match_parent"
-             app:indicatorLineColor="@android:color/white"
-             app:indicatorHeight="3px"
-             app:tabTextSize="16sp"
-             app:tabCheckTextColor="@android:color/white"
-             app:tabPaddingLeftRight="15dp"
-             android:scrollbars="none"
-             />
-      </LinearLayout>
-   </RelativeLayout>
+            <com.ik.moojing.widget.TabStrip
+                android:id="@+id/tabstrip"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                app:indicatorHeight="3px"
+                app:indicatorLineColor="@android:color/white"
+                app:tabCheckTextColor="#00EAFF"
+                app:tabPaddingLeftRight="8px"
+                app:tabTextSize="10sp" />
+        </LinearLayout>
+    </RelativeLayout>
 
-   <android.support.v4.view.ViewPager
-       android:id="@+id/view_pager"
-       android:layout_width="fill_parent"
-       android:layout_height="fill_parent"
-       android:layout_below="@id/category_layout" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/category_layout" />
 </LinearLayout>

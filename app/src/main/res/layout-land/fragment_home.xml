@@ -18,8 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
-            android:format12Hour="kk:mm"
-            android:format24Hour="kk:mm"
+            android:format12Hour="hh:mm"
+            android:format24Hour="HH:mm"
             android:textColor="@color/color_data_time"
             android:textIsSelectable="true"
             android:textSize="70px" />
@@ -38,7 +38,6 @@
             android:id="@+id/tv_lunar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="戊戌年五月初八"
             android:layout_marginTop="2px"
             android:layout_marginLeft="-2px"
             android:textColor="@color/color_main_data_time"

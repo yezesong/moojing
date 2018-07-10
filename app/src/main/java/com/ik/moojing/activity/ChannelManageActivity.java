@@ -1,6 +1,5 @@
 package com.ik.moojing.activity;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.view.View;

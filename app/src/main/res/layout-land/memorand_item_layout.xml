@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="54px"
+    android:gravity="center_vertical"
+    android:paddingTop="3px"
+    android:paddingBottom="3px"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="18px"
+        android:layout_height="18px" />
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/memorand_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="工程会议"
+            android:textColor="#F8F8F8"
+            android:textSize="20px" />
+
+        <TextView
+            android:id="@+id/memorand_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="11:20"
+            android:textColor="#E1E1E1"
+            android:textSize="12px" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_play_right" />
+</LinearLayout>
