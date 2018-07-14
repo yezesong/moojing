@@ -24,7 +24,7 @@ public abstract class LazyLoadFragment extends Fragment {
     protected boolean isInit = false;
     protected boolean isLoad = false;
     protected final String TAG = "LazyLoadFragment";
-    private View view;
+    protected View view;
 
     @Nullable
     @Override
@@ -80,7 +80,7 @@ public abstract class LazyLoadFragment extends Fragment {
 
     protected void showToast(String message) {
         if (!TextUtils.isEmpty(message)) {
-            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -101,17 +101,6 @@ public abstract class LazyLoadFragment extends Fragment {
         return view;
     }
 
-    /**
-     * 找出对应的控件
-     *
-     * @param id
-     * @param <T>
-     * @return
-     */
-    protected <T extends View> T findViewById(int id) {
-
-        return (T) getContentView().findViewById(id);
-    }
 
     /**
      * 当视图初始化并且对用户可见的时候去真正的加载数据

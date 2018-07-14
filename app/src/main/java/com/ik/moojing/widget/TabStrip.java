@@ -45,7 +45,7 @@ public class TabStrip extends HorizontalScrollView {
     private ViewPager pager;
     private int tabCount;
     private int currentPosition = 0;
-    private int tabCurrentPosition=0;
+    private int tabCurrentPosition = 0;
     private float currentPositionOffset = 0f;
     private Paint rectPaint;
 
@@ -194,9 +194,9 @@ public class TabStrip extends HorizontalScrollView {
                 TextView tab = (TextView) v;
                 tab.setTextSize(TypedValue.COMPLEX_UNIT_PX, tabTextSize);
                 tab.setTypeface(tabTypeface, tabTypefaceStyle);
-                if (i==currentPosition){
+                if (i == currentPosition) {
                     tab.setTextColor(tabCheckTextColor);
-                }else {
+                } else {
                     tab.setTextColor(tabTextColor);
                 }
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
@@ -242,11 +242,12 @@ public class TabStrip extends HorizontalScrollView {
             lineLeft = (currentPositionOffset * nextTabLeft + (1f - currentPositionOffset) * lineLeft);
             lineRight = (currentPositionOffset * nextTabRight + (1f - currentPositionOffset) * lineRight);
         }
-        if (mShowIndicator)
-            canvas.drawRect(lineLeft, height - indicatorHeight, lineRight, height, rectPaint);
+        if (mShowIndicator) {
+            canvas.drawRect(lineLeft, height - indicatorHeight + 3, lineRight, height + 3, rectPaint);
 
-//		rectPaint.setColor(underlineColor);
-//		canvas.drawRect(0, height - underlineHeight, tabsContainer.getWidth(), height, rectPaint);
+            rectPaint.setColor(underlineColor);
+            canvas.drawRect(0, height - underlineHeight + 3, tabsContainer.getWidth(), height + 3, rectPaint);
+        }
 
     }
 

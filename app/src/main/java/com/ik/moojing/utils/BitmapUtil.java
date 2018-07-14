@@ -242,34 +242,6 @@ public class BitmapUtil {
         return bitmap;
     }
 
-    /**
-     * bitmap 转 drawable
-     *
-     * @param bm
-     * @return
-     */
-    public static Drawable bitmap2Drable(Bitmap bm) {
-        return new BitmapDrawable(bm);
-    }
-
-
-    /**
-     * 把字节数据转换成Drawable
-     *
-     * @param imgByte 字节数据
-     * @return
-     */
-    @SuppressWarnings("deprecation")
-    public static Drawable byte2Drawable(byte[] imgByte) {
-        Bitmap bitmap;
-        if (imgByte != null) {
-            bitmap = BitmapFactory.decodeByteArray(imgByte, 0, imgByte.length);
-            Drawable drawable = new BitmapDrawable(bitmap);
-
-            return drawable;
-        }
-        return null;
-    }
 
     /**
      * 把图片转换成字节数组
@@ -414,40 +386,6 @@ public class BitmapUtil {
         }
     }
 
-    /**
-     * 将图片从本地读到内存时,进行压缩 ,即图片从File形式变为Bitmap形式
-     * 特点: 通过设置采样率, 减少图片的像素, 达到对内存中的Bitmap进行压缩
-     *
-     * @param srcPath
-     * @return
-     */
-    public static Bitmap compressImageFromFile(String srcPath, float pixWidth, float pixHeight) {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;// 只读边,不读内容
-        Bitmap bitmap = BitmapFactory.decodeFile(srcPath, options);
-
-        options.inJustDecodeBounds = false;
-        int w = options.outWidth;
-        int h = options.outHeight;
-        int scale = 1;
-        if (w > h && w > pixWidth) {
-            scale = (int) (options.outWidth / pixWidth);
-        } else if (w < h && h > pixHeight) {
-            scale = (int) (options.outHeight / pixHeight);
-        }
-        if (scale <= 0)
-            scale = 1;
-        options.inSampleSize = scale;// 设置采样率
-
-        options.inPreferredConfig = Bitmap.Config.ARGB_8888;// 该模式是默认的,可不设
-        options.inPurgeable = true;// 同时设置才会有效
-        options.inInputShareable = true;// 。当系统内存不够时候图片自动被回收
-
-        bitmap = BitmapFactory.decodeFile(srcPath, options);
-        // return compressBmpFromBmp(bitmap);//原来的方法调用了这个方法企图进行二次压缩
-        // 其实是无效的,大家尽管尝试
-        return bitmap;
-    }
 
     /**
      * 判断照片的角度

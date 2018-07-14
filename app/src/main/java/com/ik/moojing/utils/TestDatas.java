@@ -9,6 +9,7 @@ import com.ik.moojing.R;
 import com.ik.moojing.entry.AppInfo;
 import com.ik.moojing.entry.MemorandumBean;
 import com.ik.moojing.entry.NewsItemBean;
+import com.ik.moojing.entry.WeatherBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,34 @@ public class TestDatas {
         return items;
     }
 
+    public static List<WeatherBean> getWeathers() {
+        List<WeatherBean> listWeathers = new ArrayList<>();
+        listWeathers.add(new WeatherBean("00:00", "今天", "16℃"));
+        listWeathers.add(new WeatherBean("01:00", "明天", "16℃"));
+        listWeathers.add(new WeatherBean("02:00", "2018年7月1日", "16℃"));
+        listWeathers.add(new WeatherBean("03:00", "2018年7月2日", "16℃"));
+        listWeathers.add(new WeatherBean("04:00", "2018年7月3日", "16℃"));
+        listWeathers.add(new WeatherBean("05:00", "2018年7月4日", "16℃"));
+        listWeathers.add(new WeatherBean("06:00", "2018年7月5日", "16℃"));
+        listWeathers.add(new WeatherBean("07:00", "2018年7月6日", "16℃"));
+        listWeathers.add(new WeatherBean("08:00", "2018年7月7日", "16℃"));
+        listWeathers.add(new WeatherBean("09:00", "2018年7月8日", "16℃"));
+        listWeathers.add(new WeatherBean("10:00", "2018年7月9日", "16℃"));
+        listWeathers.add(new WeatherBean("11:00", "2018年7月10日", "16℃"));
+        listWeathers.add(new WeatherBean("12:00", "2018年7月11日", "16℃"));
+        listWeathers.add(new WeatherBean("13:00", "2018年7月12日", "16℃"));
+        listWeathers.add(new WeatherBean("14:00", "2018年7月13日", "16℃"));
+        listWeathers.add(new WeatherBean("15:00", "2018年7月14日", "16℃"));
+        listWeathers.add(new WeatherBean("16:00", "2018年7月15日", "16℃"));
+        listWeathers.add(new WeatherBean("17:00", "2018年7月16日", "16℃"));
+        listWeathers.add(new WeatherBean("18:00", "2018年7月17日", "16℃"));
+        listWeathers.add(new WeatherBean("19:00", "2018年7月18日", "16℃"));
+        listWeathers.add(new WeatherBean("20:00", "2018年7月19日", "16℃"));
+        listWeathers.add(new WeatherBean("21:00", "2018年7月20日", "16℃"));
+        listWeathers.add(new WeatherBean("22:00", "2018年7月21日", "16℃"));
+        listWeathers.add(new WeatherBean("23:00", "2018年7月22日", "16℃"));
+        return listWeathers;
+    }
 
     public static List<MemorandumBean> getMemorandTestBeans() {
         List<MemorandumBean> list = new ArrayList<>();

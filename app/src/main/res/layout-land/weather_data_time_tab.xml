@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="65px"
+    android:orientation="vertical">
+
+
+    <com.ik.moojing.widget.TabStrip
+        android:id="@+id/tabstrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:scrollbars="none"
+        app:indicatorHeight="2px"
+        app:indicatorLineColor="@android:color/white"
+        app:tabCheckTextColor="#00EAFF"
+        app:tabPaddingLeftRight="8px"
+        app:showindicator="true"
+        app:tabTextSize="20px" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

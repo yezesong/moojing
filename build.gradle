@@ -25,9 +25,80 @@ allprojects {
             options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
         }
     }
-
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+/**
+ * 生成版本的时间
+ */
+static def releaseTime() {
+    return new Date().format("yyyy_MMdd")
+}
+
+/**
+ * 生成VersionCode
+ */
+static def generateVersionCode() {
+    return new Date().format("yyyyMMdd")
+}
+
+/**
+ *  重命名Apk的方法
+ */
+def renameAPK(android, variant, output) {
+    renameAPK(android, variant, output, APK_PREFIX)
+}
+
+
+
+/**
+ *  重命名Apk的方法
+ */
+def renameAPK(android, variant, output, prefix) {
+    def flavor = variant.productFlavors[0];
+    def flavorName;
+    def versionName;
+
+    if (flavor == null) {
+        flavorName = ""
+        versionName = android.defaultConfig.versionName
+    } else {
+        versionName = flavor.versionName
+        flavorName = flavor.name
+    }
+
+    if (versionName == null || versionName.toString().equals("null")) {
+        versionName = variant.versionName;
+    }
+
+    if (versionName == null || versionName.toString().equals("null")) {
+        versionName = ""
+    }
+
+    def versionNameSuffix = variant.buildType.versionNameSuffix
+    if (versionNameSuffix.toString().equals("null")) {
+        versionNameSuffix = ""
+    }
+
+    def buildTypeName = variant.buildType.name;
+
+    if (buildTypeName.equals("debug")) {
+        buildTypeName = "dev"
+    } else if (buildTypeName.equals("release")) {
+        buildTypeName = "prod"
+    }
+
+
+    def outputFile = output.outputFile
+
+    if (outputFile != null) {
+        if (flavorName.equals("") || flavorName.equals("null")) {
+            output.outputFileName = "${prefix}_${buildTypeName}_v${versionName}${versionNameSuffix}_${releaseTime()}.apk"
+        } else {
+            output.outputFileName = "${prefix}_${buildTypeName}_${flavorName}_v${versionName}${versionNameSuffix}_${releaseTime()}.apk"
+        }
+    }
 }

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="200px"
+    android:paddingLeft="360px"
+    android:paddingRight="360px"
+    android:paddingTop="200px">
+
+    <LinearLayout
+        android:layout_width="500px"
+        android:layout_height="700px"
+        android:background="@mipmap/date_time_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextClock
+            android:id="@+id/main_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65px"
+            android:format12Hour="yyyy年MM月 EEEE"
+            android:format24Hour="yyyy年MM月 EEEE"
+            android:textColor="#FFF"
+            android:textSize="20px" />
+
+        <TextView
+            android:id="@+id/date_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16px"
+            android:text="20"
+            android:textColor="#08D7F6"
+            android:textSize="80px" />
+
+
+        <TextView
+            android:id="@+id/lun_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14px"
+            android:text="五月初七"
+            android:textColor="#FFF"
+            android:textSize="20px" />
+
+
+        <TextView
+            android:id="@+id/lun_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11px"
+            android:text="戊戌年【狗年】午未日"
+            android:textColor="#FFF"
+            android:textSize="16px" />
+
+        <TextView
+            android:id="@+id/tv_before"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18px"
+            android:text="距离元旦还有123天"
+            android:textColor="#FFF"
+            android:textSize="16px" />
+
+        <View
+            android:layout_width="382px"
+            android:layout_height="2px"
+            android:layout_marginTop="12px"
+            android:background="#FFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65px"
+            android:layout_marginRight="65px"
+            android:layout_marginTop="16px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="44px"
+                android:layout_height="44px"
+                android:background="#24EC4E"
+                android:gravity="center"
+                android:text="宜"
+                android:layout_marginRight="10px"
+                android:textColor="#FFF"
+                android:textSize="24px" />
+
+            <TextView
+                android:id="@+id/tv_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="嫁娶 纳财 访友 出行 入宅 安香 出火 入学 会亲友 订盟"
+                android:textColor="#FFF"
+                android:textSize="16px" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65px"
+            android:layout_marginRight="65px"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="44px"
+                android:layout_height="44px"
+                android:background="#EC6B24"
+                android:gravity="center"
+                android:text="忌"
+                android:layout_marginRight="10px"
+                android:textColor="#FFF"
+                android:textSize="24px" />
+
+            <TextView
+                android:id="@+id/tv_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="行丧 伐木 出火 作梁 作灶"
+                android:textColor="#FFF"
+                android:textSize="16px" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18px"
+                android:text="今日行程"
+                android:textColor="#FFF"
+                android:textSize="22px" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="382px"
+            android:layout_height="2px"
+            android:layout_marginTop="12px"
+            android:background="#FFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="700px"
+        android:background="@drawable/weather_info_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="210px"
+            android:layout_marginRight="203px"
+            android:layout_marginTop="61px"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="24px"
+                android:layout_height="34px"
+                android:background="@mipmap/last_month"
+                android:onClick="toLastMonth" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="2011"
+                android:textColor="#FFFFFF"
+                android:textSize="26px" />
+
+            <Button
+                android:layout_width="24px"
+                android:layout_height="34px"
+                android:background="@mipmap/next_month"
+                android:onClick="toNextMonth" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="toToday"
+            android:text="回到今天"
+            android:textColor="#08D7F6"
+            android:textSize="16px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="108px"
+            android:layout_marginRight="106px"
+            android:layout_marginTop="54px"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/calendar_tab"
+                android:text="@string/sun" />
+
+            <TextView
+                style="@style/calendar_tab"
+                android:text="@string/mon" />
+
+            <TextView
+                style="@style/calendar_tab"
+                android:text="@string/tue" />
+
+            <TextView
+                style="@style/calendar_tab"
+                android:text="@string/wed" />
+
+            <TextView
+                style="@style/calendar_tab"
+                android:text="@string/thu" />
+
+            <TextView
+                style="@style/calendar_tab"
+                android:text="@string/fri" />
+
+            <TextView
+                style="@style/calendar_tab"
+                android:text="@string/sat" />
+        </LinearLayout>
+
+        <com.necer.ncalendar.calendar.MonthCalendar
+            android:id="@+id/monthcalendar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="108px"
+            android:layout_marginRight="106px"
+            app:backgroundColor="@android:color/transparent"
+            app:calendarHeight="540px"
+            app:hintColor="#5E5E5E"
+            app:hollowCircleColor="@android:color/transparent"
+            app:lunarTextColor="#5E5E5E"
+            app:lunarTextSize="16px"
+            app:solarTextColor="#FFF"
+            app:solarTextSize="20px" />
+
+    </LinearLayout>
+</LinearLayout>

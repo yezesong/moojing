@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="200px"
+    android:paddingLeft="360px"
+    android:paddingRight="360px"
+    android:paddingTop="200px">
+
+    <ImageView
+        android:layout_width="500px"
+        android:layout_height="700px"
+        android:src="@mipmap/weather_bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="700px"
+        android:background="@drawable/weather_info_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45px"
+            android:layout_marginRight="45px"
+            android:layout_marginTop="67px"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_weather_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22℃"
+                    android:textColor="#FFF"
+                    android:textSize="80px" />
+
+                <TextView
+                    android:id="@+id/tv_weather_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24px"
+                    android:gravity="center"
+                    android:text="晴转多云"
+                    android:textColor="#FFF"
+                    android:textSize="16px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="38px"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_max_temp"
+                    style="@style/style_temp"
+                    android:text="最高气温：30℃" />
+
+                <TextView
+                    android:id="@+id/tv_min_temp"
+                    style="@style/style_temp"
+                    android:text="最高气温：18℃" />
+
+                <TextView
+                    android:id="@+id/tv_wind"
+                    style="@style/style_temp"
+                    android:text="风向：西北风4级" />
+
+                <TextView
+                    android:id="@+id/tv_wet"
+                    style="@style/style_temp"
+                    android:text="湿度:71%" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="2px"
+                android:layout_height="120px"
+                android:layout_marginLeft="25px"
+                android:layout_marginRight="25px"
+                android:layout_marginTop="14px"
+                android:background="#FFF" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14px"
+                android:text="天气炎热，建议穿短裤短袖出门，应该减少室外活动,宜洗晒，天气炎热，建议穿短裤短袖出门"
+                android:textColor="#FFFFFF"
+                android:textSize="18px" />
+        </LinearLayout>
+
+        <include layout="@layout/weather_data_time_tab" />
+    </LinearLayout>
+</LinearLayout>

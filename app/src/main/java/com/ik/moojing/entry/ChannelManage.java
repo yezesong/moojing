@@ -66,11 +66,12 @@ public class ChannelManage {
 	 * 获取其他的频道
 	 * @return 数据库存在用户配置 ? 数据库内的用户选择频道 : 默认用户选择频道 ;
 	 */
+	@SuppressWarnings("unchecked")
 	public List<ChannelItem> getUserChannel() {
 		Object cacheList = channelDao.listCache(SQLHelper.SELECTED + "= ?",new String[] { "1" });
 		if (cacheList != null && !((List) cacheList).isEmpty()) {
 			userExist = true;
-			List<Map<String, String>> maplist = (List) cacheList;
+			List<Map<String, String>> maplist = (List<Map<String, String>>) cacheList;
 			int count = maplist.size();
 			List<ChannelItem> list = new ArrayList<ChannelItem>();
 			for (int i = 0; i < count; i++) {
@@ -91,6 +92,7 @@ public class ChannelManage {
 	 * 获取其他的频道
 	 * @return 数据库存在用户配置 ? 数据库内的其它频道 : 默认其它频道 ;
 	 */
+	@SuppressWarnings("unchecked")
 	public List<ChannelItem> getOtherChannel() {
 		Object cacheList = channelDao.listCache(SQLHelper.SELECTED + "= ?" ,new String[] { "0" });
 		List<ChannelItem> list = new ArrayList<ChannelItem>();
@@ -120,7 +122,7 @@ public class ChannelManage {
 	 */
 	public void saveUserChannel(List<ChannelItem> userList) {
 		for (int i = 0; i < userList.size(); i++) {
-			ChannelItem channelItem = (ChannelItem) userList.get(i);
+			ChannelItem channelItem = userList.get(i);
 			channelItem.setOrderId(i);
 			channelItem.setSelected(Integer.valueOf(1));
 			channelDao.addCache(channelItem);

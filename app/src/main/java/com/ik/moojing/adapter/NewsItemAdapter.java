@@ -39,9 +39,7 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int pos) {
 
-        Log.i("yzs003", "pos is called and pos is " + pos);
         final NewsItemBean data = mNewsItemBean.get(pos);
-        Log.i("yzs003", "NewsItemAdapter onBindViewHolder is called " + data.getMessage());
         //if (viewHolder instanceof ViewHolder) {
             viewHolder.textTitle.setText(data.getTitle());
             viewHolder.textContent.setText(data.getMessage());

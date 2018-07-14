@@ -6,6 +6,8 @@
         <item name="android:windowBackground">@color/window_bg_color</item>
         <item name="android:screenOrientation">landscape</item>
         <item name="windowNoTitle">true</item>
+        <!-- Activity 进出动画 -->
+        <item name="android:windowAnimationStyle">@style/Animation.Activity</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 
@@ -45,5 +47,40 @@
         <item name="android:paddingRight">5dp</item>
         <item name="android:paddingTop">3dp</item>
         <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <style name="Animation" />
+
+    <style name="Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/right_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/left_out</item>
+    </style>
+
+    <style name="Animation.Windows" />
+
+    <style name="Animation.Windows.Bottom">
+        <item name="android:windowEnterAnimation">@anim/bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/bottom_out</item>
+    </style>
+
+    <style name="style_temp">
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">#858585</item>
+        <item name="android:textSize">16px</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginTop">14px</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="calendar_tab">
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16px</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 </resources>

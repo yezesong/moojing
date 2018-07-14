@@ -1,26 +1,147 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 22
+
     defaultConfig {
-        applicationId "com.sunshine.moojing"
-        minSdkVersion 17
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        // 注意这里只是设置了appid的前缀 在buildTypes里面有设置后缀
+        applicationId APPLICATION_ID
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+        versionCode generateVersionCode() as int
+        versionName VERSION_NAME
+
+        // 增加一个编译版本的时间
+        buildConfigField "long", "RELEASE_TIME", System.currentTimeMillis() + "L"
+
+        // 配置 含有的版本类型
+        buildConfigField "int", "VERSION_DEV", VERSION_DEV
+        buildConfigField "int", "VERSION_PROD", VERSION_PROD
+        // 配置默认版本-为开发版本
+        buildConfigField "int", "VERSION_TYPE", VERSION_DEV
+        buildConfigField "String", "VERSION_DESCRIPTION", "\"开发版本\""
+        ndk {
+            abiFilters 'armeabi'
+        }
     }
-    buildTypes {
+
+    //签名
+    signingConfigs {
         release {
+            storeFile file(RELEASE_STOREFILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
+
+    flavorDimensions 'version'
+    productFlavors {
+        sample {
+            dimension 'version'
+            versionName "${defaultConfig.versionName}.sample"
+
+            if (file('src/main/jniLibs/armeabi/libmsc.so').exists()) {
+                buildConfigField 'Boolean', 'WAKEUP_ENABLE', 'true'
+            } else {
+                buildConfigField 'Boolean', 'WAKEUP_ENABLE', 'false'
+            }
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            versionNameSuffix DEV_VERSION_NAME
+
+            applicationIdSuffix DEV_APPLICATION_ID_SUFFIX
+            // AndroidManifest 中配置的文件
+            manifestPlaceholders = [
+                    // App的名字
+                    APP_NAME                : DEV_APP_NAME,
+                    // App的ICON
+                    APP_ICON                : DEV_APP_ICON,
+                    // 百度统计的ID
+                    BAIDU_STATISTICS_ID     : DEV_BAIDU_STATISTICS_ID,
+                    // 百度统计的渠道描述
+                    BAIDU_STATISTICS_CHANNEL: DEV_BAIDU_STATISTICS_CHANNEL
+            ]
+
+
+            // 设置那个版本
+            buildConfigField "int", "VERSION_TYPE", VERSION_DEV
+            buildConfigField "String", "VERSION_DESCRIPTION", "\"开发版本\""
+        }
+
+        release {
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            versionNameSuffix PROD_VERSION_NAME
+
+            applicationIdSuffix PROD_APPLICATION_ID_SUFFIX
+
+            // AndroidManifest 中配置的文件
+            manifestPlaceholders = [
+                    // App的名字
+                    APP_NAME                : PROD_APP_NAME,
+                    // App的ICON
+                    APP_ICON                : PROD_APP_ICON,
+                    // 百度统计的ID
+                    BAIDU_STATISTICS_ID     : PROD_BAIDU_STATISTICS_ID,
+                    // 百度统计的渠道描述
+                    BAIDU_STATISTICS_CHANNEL: PROD_BAIDU_STATISTICS_CHANNEL
+            ]
+
+            // 设置那个版本
+            buildConfigField "int", "VERSION_TYPE", VERSION_PROD
+            buildConfigField "String", "VERSION_DESCRIPTION", "\"正式版本\""
+        }
+    }
+
+
+    dexOptions {
+        jumboMode true
+    }
+
+    sourceSets {
+        // Move the tests to tests/java, tests/res, etc...
+        //  instrumentTest.setRoot('tests')
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        // if true, only report errors
+        ignoreWarnings true
+    }
+
+    // 包名重命名，加上版本及日期
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            renameAPK(android, variant, output, APK_PREFIX);
         }
     }
 }
 
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:25.3.1'
     implementation 'me.yatoooon:screenadaptation:1.0.3'
-    compile project(':ZBLibrary')
+    implementation project(':iklibrary')
+    implementation project(':ncalendar')
+    implementation files('libs/universal-image-loader-1.9.4.jar')
 }

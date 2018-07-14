@@ -16,7 +16,6 @@ public class FragmentHome extends LazyLoadFragment implements View.OnClickListen
     private ImageView mIvRobat;
     private TextView mTvChinaDay;
 
-
     @Override
     protected int setContentView() {
         return R.layout.fragment_home;
@@ -24,14 +23,14 @@ public class FragmentHome extends LazyLoadFragment implements View.OnClickListen
 
     @Override
     protected void lazyLoad() {
-        mIvRobat = findViewById(R.id.img_robat);
+        mIvRobat = (ImageView) view.findViewById(R.id.img_robat);
         mIvRobat.setOnClickListener(this);
-        mTvChinaDay = findViewById(R.id.tv_lunar);
+        mTvChinaDay = (TextView) view.findViewById(R.id.tv_lunar);
         mTvChinaDay.setText(ChinaDate.today());
     }
 
     @Override
     public void onClick(View view) {
-        showToast("点击了机器人");
+
     }
 }

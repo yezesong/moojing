@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.ik.MoojingApp;
 import com.ik.moojing.R;
 import com.ik.moojing.activity.ChannelManageActivity;
+import com.ik.moojing.activity.WeatherActivity;
 import com.ik.moojing.adapter.HorizontalListViewAdapter;
 import com.ik.moojing.adapter.MemorandumAdapter;
 import com.ik.moojing.adapter.TabStripAdapter;
@@ -28,7 +29,7 @@ import java.util.List;
  * 主界面
  */
 
-public class FragmentMain extends LazyLoadFragment implements View.OnClickListener , OnItemClickListener {
+public class FragmentMain extends LazyLoadFragment implements View.OnClickListener, OnItemClickListener {
     private TextView mTvLauner;
     private ImageView mImgView;
     private TabStripAdapter mAdapter;
@@ -48,19 +49,19 @@ public class FragmentMain extends LazyLoadFragment implements View.OnClickListen
 
     @Override
     protected void lazyLoad() {
-        mTvLauner = findViewById(R.id.tv_lunar);
+        mTvLauner = (TextView) view.findViewById(R.id.tv_lunar);
         mTvLauner.setText(ChinaDate.today());
-        mImgView = findViewById(R.id.add_channel);
+        mImgView = (ImageView) view.findViewById(R.id.add_channel);
         mImgView.setOnClickListener(this);
 
-        mImageView = findViewById(R.id.img_add);
+        mImageView = (ImageView) view.findViewById(R.id.img_add);
         mImageView.setOnClickListener(this);
 
-        mImgMoreApps = findViewById(R.id.more_apps);
-        mHorizontialListView = findViewById(R.id.hori_listview);
-        mMemorandumlist = findViewById(R.id.memorandum_list);
-        mTabStrip = findViewById(R.id.tabstrip);
-        mViewpager = findViewById(R.id.view_pager);
+        mImgMoreApps = (ImageView) view.findViewById(R.id.more_apps);
+        mHorizontialListView = (HorizontalListView) view.findViewById(R.id.hori_listview);
+        mMemorandumlist = (ListView) view.findViewById(R.id.memorandum_list);
+        mTabStrip = (TabStrip) view.findViewById(R.id.tabstrip);
+        mViewpager = (ViewPager) view.findViewById(R.id.view_pager);
         init();
     }
 

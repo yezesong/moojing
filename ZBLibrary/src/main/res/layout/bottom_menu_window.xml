@@ -4,7 +4,7 @@
     style="@style/bottom_window_page"
     android:paddingTop="240dp" >
 
-    <zuo.biao.library.ui.MaxHeightWrapLayout
+    <ik.moojing.library.ui.MaxHeightWrapLayout
         style="@style/ll_vertical_match_wrap"
         android:background="@color/white" >
 
@@ -39,6 +39,6 @@
             android:text="取消"
             android:textColor="@color/white"
             android:visibility="gone" />
-    </zuo.biao.library.ui.MaxHeightWrapLayout>
+    </ik.moojing.library.ui.MaxHeightWrapLayout>
 
 </LinearLayout>

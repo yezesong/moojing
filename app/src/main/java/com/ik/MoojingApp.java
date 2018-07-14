@@ -2,6 +2,10 @@ package com.ik;
 
 import android.app.Application;
 
+import com.iflytek.aiui.AIUIAgent;
+import com.iflytek.aiui.AIUIConstant;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechUtility;
 import com.ik.moojing.db.SqlLiteHelper;
 import com.ik.moojing.entry.AppInfo;
 import com.ik.moojing.entry.MemorandumBean;
@@ -22,6 +26,8 @@ public class MoojingApp extends Application {
     public static List<String> mCatalogs = new ArrayList<String>();
     public static List<MemorandumBean> mMemorandumBeans = new ArrayList<>();
     public static List<AppInfo> mApps = new ArrayList<>();
+    public static List<String> mWeather = new ArrayList<>();
+
 
     public static synchronized MoojingApp getInstance() {
         if (mInstance == null) {
@@ -33,6 +39,7 @@ public class MoojingApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        SpeechUtility.createUtility(this, SpeechConstant.APPID + "=5b323742");
         ScreenAdapterTools.init(this);
         mInstance = this;
         init();
@@ -53,6 +60,9 @@ public class MoojingApp extends Application {
         mCatalogs.add("娱乐");
         mCatalogs.add("科技");
         mCatalogs.add("体育");
+
+        mWeather.add("时间");
+        mWeather.add("日期");
     }
 
     @Override

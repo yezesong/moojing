@@ -85,5 +85,4 @@ public class HorizontalListViewAdapter extends BaseAdapter {
         private View rootView;
         private ImageView mImage;
     }
-
 }

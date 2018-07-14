@@ -23,9 +23,12 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/ll_date_time"
                     android:layout_width="155px"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="95px"
+                    android:clickable="true"
+                    android:onClick="onClickView"
                     android:orientation="vertical">
 
                     <TextClock
@@ -61,8 +64,11 @@
                     android:layout_weight="1.0" />
 
                 <LinearLayout
+                    android:id="@+id/ll_weather"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:onClick="onClickView"
                     android:orientation="vertical">
 
                     <ImageView

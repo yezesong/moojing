@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="zuo.biao.library"
+    package="ik.moojing.library"
     android:versionCode="16"
     android:versionName="@string/app_version" >
 
@@ -30,55 +30,55 @@
         >
 
         <activity
-            android:name="zuo.biao.library.ui.SelectPictureActivity"
+            android:name="ik.moojing.library.ui.SelectPictureActivity"
             android:screenOrientation="portrait"
             android:theme="@style/WindowCompleteAlpha"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="zuo.biao.library.ui.CutPictureActivity"
+            android:name="ik.moojing.library.ui.CutPictureActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Window"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="zuo.biao.library.ui.WebViewActivity"
+            android:name="ik.moojing.library.ui.WebViewActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize|adjustUnspecified" />
         <activity
-            android:name="zuo.biao.library.ui.EditTextInfoActivity"
+            android:name="ik.moojing.library.ui.EditTextInfoActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustPan|adjustUnspecified" />
         <activity
-            android:name="zuo.biao.library.ui.ServerSettingActivity"
+            android:name="ik.moojing.library.ui.ServerSettingActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="zuo.biao.library.ui.TopMenuWindow"
+            android:name="ik.moojing.library.ui.TopMenuWindow"
             android:screenOrientation="portrait"
             android:theme="@style/Window"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="zuo.biao.library.ui.BottomMenuWindow"
+            android:name="ik.moojing.library.ui.BottomMenuWindow"
             android:screenOrientation="portrait"
             android:theme="@style/Window"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="zuo.biao.library.ui.EditTextInfoWindow"
+            android:name="ik.moojing.library.ui.EditTextInfoWindow"
             android:screenOrientation="portrait"
             android:theme="@style/Window"
             android:windowSoftInputMode="stateVisible|adjustResize|adjustUnspecified" />
         <activity
-            android:name="zuo.biao.library.ui.PlacePickerWindow"
+            android:name="ik.moojing.library.ui.PlacePickerWindow"
             android:screenOrientation="portrait"
             android:theme="@style/Window"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="zuo.biao.library.ui.DatePickerWindow"
+            android:name="ik.moojing.library.ui.DatePickerWindow"
             android:screenOrientation="portrait"
             android:theme="@style/Window"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="zuo.biao.library.ui.TimePickerWindow"
+            android:name="ik.moojing.library.ui.TimePickerWindow"
             android:screenOrientation="portrait"
             android:theme="@style/Window"
             android:windowSoftInputMode="stateAlwaysHidden" />
